@@ -68,7 +68,7 @@ router.route('/')
 router.get('/new', function (req, res) {
     res.render('blobs/new', {title: 'Add New Blob' })
 });
-router.params('id', function (req, res, next, id) {
+router.param('id', function (req, res, next, id) {
     mongoose.model('Blob').findById(id, function (err, blob) {
         if(err){
             console.log(id+ ' Was not found');
